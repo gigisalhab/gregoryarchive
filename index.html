@@ -8,23 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <aside class="sidebar">
-        <h2>Gregory Archive</h2>
-        <nav>
-          <ul>
-            <li class="section-title">About the Collection</li>
-            <li class="active"><a href="index.html">History of the Collection</a></li>
-            <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="takedown.html">Takedown Policy</a></li>
-            <li><a href="access.html">Access Form</a></li>
-      
-            <li class="section-title">Explore the Archive</li>
-            <li class="nested"><a href="featured.html">Featured Images</a></li>
-            <li class="nested"><a href="browse.html">Browse</a></li>
-            <li class="nested"><a href="sets.html">Browse Item Sets</a></li>
-          </ul>
-        </nav>
-      </aside>
+    <div id="sidebar"></div>
       
 
     <main class="content">
@@ -52,6 +36,13 @@
       </p>
     </main>
   </div>
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
 
