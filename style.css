@@ -66,11 +66,18 @@
     color: white;
   }
   
-  .sidebar a.active,
+  
   .sidebar li.active a {
     background-color: #747d8c;
     color: white;
     font-weight: bold;
+  }
+
+  .sidebar a.active {
+    background-color: #747d8c;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
   }
   
   /* Main Content */
