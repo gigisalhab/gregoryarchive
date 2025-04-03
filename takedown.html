@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Takedown Policy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="sidebar"></div>
+
+    <main class="content">
+      <h1>Takedown Policy</h1>
+      <div class="image-wrapper">
+        <img src="images/Delos.jpeg" alt="Delos – View from Sea, 20 July 1973">
+        <p class="caption"><strong>Delos – View from Sea, 20 July 1973</strong></p>
+      </div>
+
+      <p>The Gregory Archive provides access to content through its Airtable website for educational and scholarly use...</p>
+
+      <ul>
+        <li>Your contact information (including email address and phone)</li>
+        <li>Exact URL where you found the material</li>
+        <li>Details that describe the material</li>
+        <li>The reason why you believe your rights have been violated</li>
+      </ul>
+
+      <p>Upon receipt of a request, Gregory Archive staff will:</p>
+      <ul>
+        <li>Promptly acknowledge the request</li>
+        <li>Assess the validity</li>
+        <li>Temporarily remove the material if needed</li>
+        <li>Take appropriate action and communicate it to you</li>
+      </ul>
+    </main>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+        const currentPath = window.location.pathname.split("/").pop();
+        document.querySelectorAll('.sidebar a').forEach(link => {
+          const linkPath = link.getAttribute('href');
+          if (linkPath === currentPath || (linkPath === "index.html" && currentPath === "")) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
+</body>
+</html>

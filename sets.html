@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browse Item Sets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="sidebar"></div>
+
+    <main class="content">
+      <h1>Browse Item Sets</h1>
+      <p>Use the embedded Airtable view below to browse organized sets of materials from the Gregory Archive.</p>
+
+      <iframe class="airtable-embed" src="https://airtable.com/embed/YOUR_ITEMSETS_VIEW" frameborder="0" width="100%" height="600" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </main>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+        const currentPath = window.location.pathname.split("/").pop();
+        document.querySelectorAll('.sidebar a').forEach(link => {
+          const linkPath = link.getAttribute('href');
+          if (linkPath === currentPath || (linkPath === "index.html" && currentPath === "")) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
+</body>
+</html>

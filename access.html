@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="sidebar"></div>
+
+    <main class="content">
+      <h1>Access Form</h1>
+      <p>Use the button below to request access to this workspace and collaborate with the team...</p>
+
+      <ul>
+        <li><strong>Creator:</strong> Can fully configure and edit bases.</li>
+        <li><strong>Editor:</strong> Can add, edit, and delete records and views but cannot configure bases.</li>
+        <li><strong>Commenter:</strong> Can view and leave comments.</li>
+      </ul>
+
+      <p>Click the button to request access. A team member will follow up with next steps.</p>
+      <a href="https://airtable.com/shrYOURFORMID" target="_blank" class="button">Go to Access Form ↗</a>
+    </main>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+        const currentPath = window.location.pathname.split("/").pop();
+        document.querySelectorAll('.sidebar a').forEach(link => {
+          const linkPath = link.getAttribute('href');
+          if (linkPath === currentPath || (linkPath === "index.html" && currentPath === "")) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
+</body>
+</html>
