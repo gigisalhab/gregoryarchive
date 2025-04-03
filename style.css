@@ -19,14 +19,15 @@
   
   .sidebar {
     width: 250px;
-    background-color: #2f3542;
-    color: white;
+    background-color: #d0e8f2; /* soft light blue */
+    color: #1e1e1e;
     padding: 20px;
   }
   
   .sidebar h2 {
     margin-bottom: 30px;
     font-size: 1.2rem;
+    color: #1e1e1e;
   }
   
   .sidebar ul {
@@ -37,52 +38,36 @@
     margin: 14px 0;
   }
   
-  .sidebar li.nested {
-    margin-left: 15px;
-    font-size: 0.95rem;
-  }
-  
-  .sidebar li.nested a {
-    padding-left: 20px;
-    display: block;
-    color: #dcdde1;
-  }
-  
-  .sidebar li.nested a:hover {
-    background-color: #57606f;
-    color: white;
-    border-radius: 6px;
-  }
-  
-  
   .sidebar li.section-title {
     font-weight: bold;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin-top: 20px;
     text-transform: uppercase;
-    color: #dfe4ea;
+    color: #3c3c3c;
     letter-spacing: 0.5px;
   }
   
   .sidebar a {
-    color: #dcdde1;
+    color: #333;
     text-decoration: none;
     display: block;
-    padding: 6px 10px;
+    padding: 6px 0;
     border-radius: 6px;
     transition: background-color 0.2s;
   }
   
   .sidebar a:hover {
-    background-color: #57606f;
-    color: white;
+    background-color: #a8d5e2;
+    color: #000;
   }
   
-  .sidebar li.active a {
-    background-color: #747d8c;
-    color: white;
+  .sidebar li.active a,
+  .sidebar li a.active {
+    background-color: #6fc2da;
+    color: #fff;
     font-weight: bold;
   }
+  
   
   .content {
     flex: 1;
